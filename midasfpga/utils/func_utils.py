@@ -6,9 +6,8 @@ import os
 import numpy as np
 import sys
 from PIL import Image
-from model.model import MidasNet_small
-from utils.customization_utils import replace_dw_layers, replace_relu6_with_hardtanh
-import matplotlib.pyplot as plt
+from midasfpga.model.model import MidasNet_small
+from midasfpga.utils.customization_utils import replace_dw_layers, replace_relu6_with_hardtanh
 
 def write_pfm(path, image, scale=1):
     """Write pfm file.
@@ -226,9 +225,6 @@ def get_device(conf):
     return device
 
 
-
-
-
 def get_model(conf):
 
     device = get_device(conf)
@@ -256,15 +252,6 @@ def get_midas_transform():
     ])
     return transform
 
-
-def infer_sample(model, transform, image_path='/workspace/demodel/dog.jpg', depth_map_path = '/workspace/demodel/dog_inferred_depth.jpg'):
-    img = transform(Image.open(image_path)).unsqueeze(0).to(model.device)
-    o = model(img).squeeze().detach().cpu().numpy()
-    min_val = np.min(o)
-    max_val = np.max(o)
-    normalized_image = ((o - min_val) / (max_val - min_val)) * 255
-    normalized_image = normalized_image.astype(np.uint8)
-    plt.imsave(depth_map_path, normalized_image, cmap='gray')
 
 class Depth2Disp:
     def __init__(self, threshold=1.25, depth_cap=10):

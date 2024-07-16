@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "MidasNet_small_int.xmodel",
+    "kernel": [
+        "subgraph_MidasNet_small__MidasNet_small_Conv2d_scratch__Conv2d_layer1_rn__ret_397"
+    ],
+    "target": "DPUCZDX8G_ISA1_B4096_0101000016010407"
+}

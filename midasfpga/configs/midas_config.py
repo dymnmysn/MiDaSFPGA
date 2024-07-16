@@ -8,8 +8,8 @@ class Midas_Config:
     SEED = 1
     LOG_INTERVAL = 10
     RESUME = ''
-    DATA_ROOT = '/workspace/demodel/derlitoplu/build/data'
-    QUANT_DIR = '/workspace/demodel/derlitoplu/build/quantized'
+    DATA_ROOT = 'data'
+    QUANT_DIR = 'quantization_results/build/quantized'
     QUANT_MODE = 'float'
     QUANT_MODE_CALIB = 'calib'
     QUANT_MODE_TEST = 'test'
@@ -20,8 +20,8 @@ class Midas_Config:
     FP_4096 = "0x101000016010407"
     TARGET_3136 = "DPUCZDX8G_ISA1_B3136" 
     FP_3136 = "0x101000016010406"
-    MODEL_WEIGHTS = '/workspace/demodel/weights/midas_v21_small_256.pt'
-    SAMPLE_IMAGE_PATH = '/workspace/demodel/dog.jpg'
+    MODEL_WEIGHTS = 'weights/midas_v21_small_256.pt'
+    SAMPLE_IMAGE_PATH = 'data/rgb_00065.png'
     TARGET = FP_4096
 
     #These are for FPGA board

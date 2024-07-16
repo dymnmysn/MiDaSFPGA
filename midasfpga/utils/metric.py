@@ -1,5 +1,5 @@
 import torch
-from utils.infer_utils import compute_scale_and_shift
+from midasfpga.utils.infer_utils import compute_scale_and_shift
 
 
 class BadPixelMetric:

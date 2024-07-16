@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-from .blocks import Interpolate, FeatureFusionBlock_custom
-from utils.block_utils import make_encoder
+from midasfpga.model.blocks import Interpolate, FeatureFusionBlock_custom
+from midasfpga.utils.block_utils import make_encoder
 
 class MidasNet_small(nn.Module):
     """Network for monocular depth estimation.
