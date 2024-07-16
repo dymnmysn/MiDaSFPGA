@@ -1,6 +1,5 @@
 import torch.nn as nn
 
-
 def replace_relu6_with_hardtanh(model):
     def replace_recursive(module):
         for name, child_module in module.named_children():

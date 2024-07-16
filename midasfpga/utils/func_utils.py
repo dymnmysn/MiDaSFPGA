@@ -273,3 +273,14 @@ def infer_sample(model, transform, image_path='/workspace/demodel/dog.jpg', dept
     normalized_image = ((o - min_val) / (max_val - min_val)) * 255
     normalized_image = normalized_image.astype(np.uint8)
     plt.imsave(depth_map_path, normalized_image, cmap='gray')
+
+class Depth2Disp:
+    def __init__(self, threshold=1.25, depth_cap=10):
+        self.__threshold = threshold
+        self.__depth_cap = depth_cap
+
+    def __call__(self, target):
+        # transform predicted disparity to aligned depth
+        target_disparity = torch.clip(target,0.01,10)
+        target_disparity = 1.0 / target_disparity
+        return target_disparity

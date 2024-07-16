@@ -1,5 +1,5 @@
-
 class Midas_Config:
+    #These are for both PC and FPGA parts
     IMG_W = 256
     IMG_H = 192
     BATCH_SIZE = 32
@@ -22,6 +22,12 @@ class Midas_Config:
     FP_3136 = "0x101000016010406"
     MODEL_WEIGHTS = '/workspace/demodel/weights/midas_v21_small_256.pt'
     SAMPLE_IMAGE_PATH = '/workspace/demodel/dog.jpg'
-
     TARGET = FP_4096
 
+    #These are for FPGA board
+    FPGA_XMODEL_PATH = '/home/ubuntu/Downloads/target_kv260/fcn8/model/fcn8.xmodel'
+    FPGA_DATA_DIR = 'images'
+    FPGA_INDEX_LENGTH = 6
+    FPGA_PARTITION_LENGTH = 109
+
+    
