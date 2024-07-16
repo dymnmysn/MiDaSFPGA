@@ -3,17 +3,20 @@ import numpy as np
 import torch.utils.data as data
 from glob import glob
 
-class NyuDepthV2(data.Dataset):
-    def __init__(self, datapath = 'data', transform=None, partition_index = 0, shift = 109):
+class CustomDataset(data.Dataset):
+    def __init__(self, datapath = 'data', transform=None):
 
         self.__image_list = []
         self.__depth_list = []
 
         self.__transform = transform
-        files = [(f'{datapath}/rgb_{i:05d}.png', f'{datapath}/depth_{i:05d}.npy') for i in range(partition_index*shift,partition_index*shift+shift)]
+        img_pathes = sorted(glob(f"{datapath}/*.png"))
+        depth_pathes = sorted(glob(f"{datapath}/*.npy"))
+        files = [(img_pathes[i], depth_pathes[i]) for i in range(len(img_pathes))]
         for id in files:
             i,d = id
-            self.__image_list.append(np.array(Image.open(i))) 
+            #self.__image_list.append(np.array(Image.open(i))) 
+            self.__image_list.append(Image.open(i))
             self.__depth_list.append(np.load(d))
         
         self.__length = len(self.__image_list)
@@ -38,7 +41,6 @@ class NyuDepthV2(data.Dataset):
 
         # transforms
         if self.__transform is not None:
-            sample = self.__transform(sample)
+            sample["image"] = self.__transform(sample["image"])
 
         return sample
-    

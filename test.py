@@ -1,5 +1,6 @@
 from midasfpga.configs.midas_config import Midas_Config
-from midasfpga.utils.func_utils import quantize, get_midas_transform, get_model, infer_sample
+from midasfpga.utils.func_utils import get_midas_transform, get_model, infer_sample
+from midasfpga.utils.fpga_utils import quantize
 from PIL import Image
 
 if __name__=='__main__':

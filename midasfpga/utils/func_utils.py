@@ -1,4 +1,3 @@
-from pytorch_nndct.apis import torch_quantizer
 import torch
 import torchvision.transforms as transforms
 import cv2
@@ -7,8 +6,8 @@ import os
 import numpy as np
 import sys
 from PIL import Image
-from ..model.model import MidasNet_small
-from ..utils.customization_utils import replace_dw_layers, replace_relu6_with_hardtanh
+from model.model import MidasNet_small
+from utils.customization_utils import replace_dw_layers, replace_relu6_with_hardtanh
 import matplotlib.pyplot as plt
 
 def write_pfm(path, image, scale=1):
@@ -227,14 +226,7 @@ def get_device(conf):
     return device
 
 
-def quantize(target, quant_mode, quant_dir, model, img, device, deploy_check):
-    quantizer = torch_quantizer(quant_mode, model, (img), output_dir = quant_dir, device=device, 
-                                target=target)
-    qmodel = quantizer.quant_model
-    _ = qmodel(img)
-    quantizer.export_quant_config()
-    quantizer.export_xmodel(quant_dir, deploy_check=deploy_check)
-    quantizer.export_torch_script(output_dir = quant_dir)
+
 
 
 def get_model(conf):
