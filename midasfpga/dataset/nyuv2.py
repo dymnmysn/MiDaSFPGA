@@ -5,29 +5,23 @@ from glob import glob
 
 class NyuDepthV2(data.Dataset):
     def __init__(self, datapath = 'data', transform=None, partition_index = 0, shift = 109):
-
-        self.__image_list = []
-        self.__depth_list = []
-
         self.__transform = transform
-        files = [(f'{datapath}/rgb_{i:05d}.png', f'{datapath}/depth_{i:05d}.npy') for i in range(partition_index*shift,partition_index*shift+shift)]
-        for id in files:
-            i,d = id
-            self.__image_list.append(np.array(Image.open(i))) 
-            self.__depth_list.append(np.load(d))
-        
-        self.__length = len(self.__image_list)
+        img_pathes = sorted(glob(f"{datapath}/*.png"))
+        depth_pathes = sorted(glob(f"{datapath}/*.npy"))
+        files = [(img_pathes[i], depth_pathes[i]) for i in range(len(img_pathes))]
+        self.files = files[partition_index*shift: (partition_index+1)*shift]
+        self.__length = len(self.files)
 
     def __len__(self):
         return self.__length
 
     def __getitem__(self, index):
         # image
-        image = self.__image_list[index]
-        #image = image / 255 #ToTensor deals with it
+        i,d = self.files[index]
+        image = Image.open(i)
 
         # depth and mask
-        depth = self.__depth_list[index]
+        depth = np.load(d)
         mask = (depth > 0) & (depth < 10)
 
         # sample
@@ -38,7 +32,7 @@ class NyuDepthV2(data.Dataset):
 
         # transforms
         if self.__transform is not None:
-            sample = self.__transform(sample)
+            sample["image"] = self.__transform(sample["image"])
 
         return sample
     

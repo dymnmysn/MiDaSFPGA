@@ -26,7 +26,7 @@ class Midas_Config:
 
     #These are for FPGA board
     FPGA_XMODEL_PATH = '/home/ubuntu/Downloads/target_kv260/fcn8/model/fcn8.xmodel'
-    FPGA_DATA_DIR = 'images'
+    FPGA_DATA_DIR = '/home/ubuntu/Downloads/data'
     FPGA_INDEX_LENGTH = 6
     FPGA_PARTITION_LENGTH = 109
 

@@ -5,9 +5,8 @@ import numpy as np
 from typing import List
 from tqdm import tqdm
 
-from dpu_utils import app
-from dataset.nyuv2 import NyuDepthV2
-from utils.metric import BadPixelMetric
+from midasfpga.dataset.nyuv2 import NyuDepthV2
+from midasfpga.utils.metric import BadPixelMetric
 from midasfpga.utils.func_utils import get_midas_transform
 import torch
 import torch.utils.data as data
@@ -31,7 +30,9 @@ def get_child_subgraph_dpu(graph: "Graph") -> List["Subgraph"]:
     ]
 
 
-def runDPU(out_q, start,dpu,img):
+def runDPU(dpu,img):
+
+    out_q = []
 
     '''get tensor'''
     inputTensors = dpu.get_input_tensors()
@@ -42,7 +43,6 @@ def runDPU(out_q, start,dpu,img):
     batchSize = input_ndim[0]
     n_of_images = len(img)
     count = 0
-    write_index = start
     while count < n_of_images:
         if (count+batchSize<=n_of_images):
             runSize = batchSize
@@ -66,30 +66,24 @@ def runDPU(out_q, start,dpu,img):
 
         '''store output vectors '''
         for j in range(runSize):
-            out_q[write_index] = outputData[0][j]
-            write_index += 1
+            out_q.append(outputData[0][j])
+
         count = count + runSize
+    return out_q
 
 
-def app(xmodel_path, dataloader):
+def X_app(xmodel_path, images):
 
-    img = []
-    for i, batch in tqdm(enumerate(dataloader),total=len(dataloader.dataset)):
-        img.append(batch['image'].permute(0,2,3,1).cpu().numpy())
-
-    runTotal = len(img) * img[0].shape[0]
-
-    out_q = [None] * runTotal
+    runTotal = len(images) * images[0].shape[0]
 
     g = xir.Graph.deserialize(xmodel_path)
     subgraphs = get_child_subgraph_dpu(g)
 
     dpu_runner = vart.Runner.create_runner(subgraphs[0], "run")
-
-    start=0
         
     time1 = time.time()
-    out_q = runDPU(out_q, start, dpu_runner, img) #It may result slower inference this way
+
+    out_q = runDPU(dpu_runner, images) #It may result slower inference this way
     time2 = time.time()
     timetotal = time2 - time1
 
@@ -126,7 +120,7 @@ def eval_speed(conf):
             img.append(batch['image'].permute(0, 2, 3, 1))
 
         print('--------------------------------------------------------------')
-        duration, out_q = app(xmodel_path, dl)
+        duration, out_q = X_app(xmodel_path, dl)
         outputs.append(out_q)
         total_time += duration
 
