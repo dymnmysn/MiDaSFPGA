@@ -58,14 +58,22 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 *Zero-shot performance*
 
 ## References
-- Eigen et al.
-- Xian et al.
-- Swaraja et al.
-- Laina et al.
-- Dou et al.
-- Nobuho et al.
-- Youki et al.
-- Midas et al.
+
+1. Eigen, D., Fergus, R.: Predicting depth, surface normals, and semantic labels with a common multi-scale convolutional architecture. In: 2015 IEEE International Conference on Computer Vision (ICCV), Santiago, Chile, pp. 2650–2658 (2015). [DOI: 10.1109/ICCV.2015.304](https://doi.org/10.1109/ICCV.2015.304)
+
+2. Xian, K., et al.: Monocular relative depth perception with web stereo data supervision. In: 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, Salt Lake City, UT, USA, pp. 311–320 (2018). [DOI: 10.1109/CVPR.2018.00040](https://doi.org/10.1109/CVPR.2018.00040)
+
+3. Swaraja, K., Naga Siva Pavan, K., Suryakanth Reddy, S., Ajay, K., Uday Kiran Reddy, P., Kora, Padmavathi, Meenakshi, K., Chaitanya, Duggineni, Valiveti, Himabindu: CNN based monocular depth estimation. E3S Web Conf. 309, 01070 (2021). [DOI: 10.1051/e3sconf/202130901070](https://doi.org/10.1051/e3sconf/202130901070)
+
+4. Hashimoto, N., Takamaeda-Yamazaki, S.: FADEC: FPGA-based acceleration of video depth estimation by HW/SW co-design. In: 2022 International Conference on Field-Programmable Technology (ICFPT), Hong Kong, pp. 1–9 (2022). [DOI: 10.1109/ICFPT56656.2022.9974565](https://doi.org/10.1109/ICFPT56656.2022.9974565)
+
+5. ZiWen, D., YuQi, L., Dong, Y.: FasterMDE: A real-time monocular depth estimation search method that balances accuracy and speed on the edge. Appl Intell 53, 24566–24586 (2023). [DOI: 10.1007/s10489-023-04872-2](https://doi.org/10.1007/s10489-023-04872-2)
+
+6. Sada, Y., Soga, N., Shimoda, M., Jinguji, A., Sato, S., Nakahara, H.: Fast monocular depth estimation on an FPGA. In: 2020 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), New Orleans, LA, USA, pp. 143–146 (2020). [DOI: 10.1109/IPDPSW50202.2020.00032](https://doi.org/10.1109/IPDPSW50202.2020.00032)
+
+7. Ranftl, R., Lasinger, K., Hafner, D., Schindler, K., Koltun, V.: Towards robust monocular depth estimation: Mixing datasets for zero-shot cross-dataset transfer. IEEE Transactions on Pattern Analysis and Machine Intelligence 44(3) (2022). [DOI: 10.1109/TPAMI.2021.3072546](https://doi.org/10.1109/TPAMI.2021.3072546)
+
+
 
 
 
