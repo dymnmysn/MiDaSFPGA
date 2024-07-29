@@ -15,3 +15,7 @@ xmodel_files
 - **md5sum.txt**: Contains the MD5 checksums for file integrity verification.
 - **MidasNet_small_int.xmodel**: The XModel file of the MidasNet small model.
 - **README.md**: This readme file.
+
+## XModel File
+
+Download xmodel file from [link](https://drive.google.com/file/d/1jvKS_kWcfeV0mjFe0IPc5qiBv2fomTFY/view?usp=sharing)
