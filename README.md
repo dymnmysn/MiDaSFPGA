@@ -75,13 +75,18 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 
 
 
+## Depth map comparison
 
+Results on NYUv2 dataset. Second row: Ground truth, third row: float model inference, and fourth row: quantized model inference on FPGA:
+<p align="center">
+  <img src="figures/nyu.png" alt="Example Image" width="60%" />
+</p>
 
+Results on Coco dataset. Depth maps are generated on DPU (FPGA) using quantized model weights. 
+<p align="center">
+  <img src="figures/coco.png" alt="Example Image" width="60%" />
+</p>
 
-### Depth map comparison
-
-Zoom in for better visibility
-![](figures/Comparison.png)
 
 ### Speed on Camera Feed	
 
