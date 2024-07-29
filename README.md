@@ -16,7 +16,7 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
     docker pull yasinadiyaman/xilinx-vitis-ai-pytorch-gpu
     ```
 
-2) Then inside docker run the bash script:
+2) Run the docker image. Then, inside docker, run the bash script:
 
     ```shell
     bash quantize.sh
