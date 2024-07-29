@@ -77,7 +77,7 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 
 ## Depth map comparison
 
-### Results on NYUv2 dataset. Second row: ground truth, third row: float model inference, and fourth row: quantized model inference on FPGA:
+### Results on NYUv2 dataset. From top to bottom: rgb image, ground truth disparity map, float model inference, quantized model inference on FPGA.
 <p align="center">
   <img src="figures/nyu.png" alt="Example Image" width="60%" />
 </p>
