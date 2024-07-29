@@ -32,6 +32,12 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
     python evaluate_xmodel.py
     ```
     
+6) To compare inferenced depth maps from CPU and DPU on sample results:  
+
+   ```shell
+   python visualize.py
+   ```
+   
 #### optional
 
 For the Next-ViT model, execute
