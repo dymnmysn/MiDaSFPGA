@@ -19,7 +19,7 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 2) Then inside docker run the bash script:
 
     ```shell
-    python evaluate_xmodel.py
+    bash quantize.sh
     ```
 
 3) After xmodel file generated, copy xmodel file with meta.json into Kria KV260 board (tested on Ubuntu image, not on Petalinux).
