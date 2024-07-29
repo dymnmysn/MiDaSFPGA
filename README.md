@@ -29,7 +29,7 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 5) Evaluate the model on NYUv2. You may use another dataset, just copy images and ground truth depth maps under data/ directory.
    
     ```shell
-    bash evaluate.sh
+    python evaluate_xmodel.py
     ```
     
 #### optional
