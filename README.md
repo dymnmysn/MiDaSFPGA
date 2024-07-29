@@ -134,7 +134,24 @@ See [README](https://github.com/isl-org/MiDaS/tree/master/ros) in the `ros` subd
 Currently only supports MiDaS v2.1. DPT-based models to be added. 
 
 
-### Accuracy
+### Quantitative Comparison 
+
+# Comparison with Baseline on NYUv2 Dataset
+
+| **Architecture**      | **Input Size** | **GOPs** | **$\delta$1** | **$\delta$2** | **$\delta$3** | **REL** | **RMSE** | **fps** | **Power** | **Freq** | **Platform**       |
+|-----------------------|----------------|----------|---------------|---------------|---------------|----------|----------|---------|-----------|----------|--------------------|
+| VGG \cite{eigen}     | 228x304        | 23.4     | 76.9          | -             | -             | -        | -        | -       | -         | -        | CPU                |
+| ResNet50 \cite{xian} | 384x384        | 61.8     | 78.1          | 95            | 98.7          | 0.155    | 0.66     | -       | -         | -        | CPU                |
+| ResNet50 \cite{swaraja} | 256x256    | -        | -             | -             | -             | 0.168    | 0.638    | -       | -         | -        | CPU                |
+| EfficientNet-B0 \cite{swaraja} | 256x256 | -    | -             | -             | -             | 0.156    | 0.625    | -       | -         | -        | CPU                |
+| ResNet-UpProj \cite{laina} | 228x304 | 22.9     | 81.1          | 95.3          | 98.8          | 0.127    | 0.573    | 18.18  | -         | -        | GPU                |
+| FasterMDE \cite{dou} | -              | -        | -             | -             | -             | **0.113** | -       | 33.57  | -         | -        | Jetson Xavier NX   |
+| DeepVideoMVS \cite{nobuho} | -       | -        | -             | -             | -             | -        | -        | 3.6    | -         | 188M    | ZCU104             |
+| DepthFCN \cite{youki} | 256x256       | **0.66** | 76.2          | -             | -             | -        | -        | **123** | **0.3W** | 200M    | ZU3EG              |
+| MiDaSNet \cite{midas} | 480x640       | 3.47     | **85.8***     | **97.73***    | **99.51***    | 0.117*   | **0.467* | 0.71   | 1.4W    | 1.3G   | ARM Cortex A53    |
+| Proposed work         | 480x640       | 7.43     | **82.6***     | **96.81***    | **99.31***    | 0.133*   | **0.506* | 50.74  | 0.62W   | 300M   | Kria-KV260         |
+
+*Zero-shot performance*
 
 
 
@@ -155,7 +172,7 @@ Test configuration
 Speed: 22 FPS
 
 
-### Citation
+### References
 
 Please cite our paper if you use this code or any of the models:
 ```
@@ -169,54 +186,6 @@ Please cite our paper if you use this code or any of the models:
 }
 ```
 
-If you use a DPT-based model, please also cite:
-
-```
-@article{Ranftl2021,
-	author    = {Ren\'{e} Ranftl and Alexey Bochkovskiy and Vladlen Koltun},
-	title     = {Vision Transformers for Dense Prediction},
-	journal   = {ICCV},
-	year      = {2021},
-}
-```
-
-Please cite the technical report for MiDaS 3.1 models:
-
-```
-@article{birkl2023midas,
-      title={MiDaS v3.1 -- A Model Zoo for Robust Monocular Relative Depth Estimation},
-      author={Reiner Birkl and Diana Wofk and Matthias M{\"u}ller},
-      journal={arXiv preprint arXiv:2307.14460},
-      year={2023}
-}
-```
-
-For ZoeDepth, please use
-
-```
-@article{bhat2023zoedepth,
-  title={Zoedepth: Zero-shot transfer by combining relative and metric depth},
-  author={Bhat, Shariq Farooq and Birkl, Reiner and Wofk, Diana and Wonka, Peter and M{\"u}ller, Matthias},
-  journal={arXiv preprint arXiv:2302.12288},
-  year={2023}
-}
-```
-
-and for LDM3D
-
-```
-@article{stan2023ldm3d,
-  title={LDM3D: Latent Diffusion Model for 3D},
-  author={Stan, Gabriela Ben Melech and Wofk, Diana and Fox, Scottie and Redden, Alex and Saxton, Will and Yu, Jean and Aflalo, Estelle and Tseng, Shao-Yen and Nonato, Fabio and Muller, Matthias and others},
-  journal={arXiv preprint arXiv:2305.10853},
-  year={2023}
-}
-```
-
-### Acknowledgements
-
-Our work builds on and uses code from [timm](https://github.com/rwightman/pytorch-image-models) and [Next-ViT](https://github.com/bytedance/Next-ViT). 
-We'd like to thank the authors for making these libraries available.
 
 ### License 
 
