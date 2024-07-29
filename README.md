@@ -97,13 +97,13 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 
 Please cite our paper if you use this code or any of the models:
 ```
-@ARTICLE {Ranftl2022,
-    author  = "Ren\'{e} Ranftl and Katrin Lasinger and David Hafner and Konrad Schindler and Vladlen Koltun",
-    title   = "Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-Shot Cross-Dataset Transfer",
-    journal = "IEEE Transactions on Pattern Analysis and Machine Intelligence",
-    year    = "2022",
-    volume  = "44",
-    number  = "3"
+@ARTICLE {midasfpga,
+    author  = "Adiyaman MY., Baskaya F. ",
+    title   = "FPGA Implementation of Monocular Depth Estimation Model: MiDaSNet",
+    journal = "...",
+    year    = "2024",
+    volume  = "...",
+    number  = "..."
 }
 ```
 
