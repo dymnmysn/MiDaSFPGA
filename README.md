@@ -55,7 +55,7 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 | MiDaSNet (Ranftl et al.)     | 480x640        | 3.47     | **85.8*** | **97.73*** | **99.51*** | 0.117*   | **0.467* | 0.71   | 1.4W    | 1.3G   | ARM Cortex A53    |
 | Proposed work               | 480x640        | 7.43     | **82.6*** | **96.81*** | **99.31*** | 0.133*   | **0.506* | 50.74  | 0.62W   | 300M   | Kria-KV260         |
 
-*Zero-shot performance * *
+*Zero-shot performance 
 
 ## References
 
