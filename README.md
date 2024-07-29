@@ -135,23 +135,33 @@ Currently only supports MiDaS v2.1. DPT-based models to be added.
 
 
 ### Quantitative Comparison 
-
 # Comparison with Baseline on NYUv2 Dataset
 
-| **Architecture**      | **Input Size** | **GOPs** | **δ1** | **δ2** | **δ3** | **REL** | **RMSE** | **fps** | **Power** | **Freq** | **Platform**       |
-|-----------------------|----------------|----------|--------|--------|--------|----------|----------|---------|-----------|----------|--------------------|
-| VGG \cite{eigen}     | 228x304        | 23.4     | 76.9   | -      | -      | -        | -        | -       | -         | -        | CPU                |
-| ResNet50 \cite{xian} | 384x384        | 61.8     | 78.1   | 95     | 98.7   | 0.155    | 0.66     | -       | -         | -        | CPU                |
-| ResNet50 \cite{swaraja} | 256x256    | -        | -      | -      | -      | 0.168    | 0.638    | -       | -         | -        | CPU                |
-| EfficientNet-B0 \cite{swaraja} | 256x256 | -    | -      | -      | -      | 0.156    | 0.625    | -       | -         | -        | CPU                |
-| ResNet-UpProj \cite{laina} | 228x304 | 22.9     | 81.1   | 95.3   | 98.8   | 0.127    | 0.573    | 18.18  | -         | -        | GPU                |
-| FasterMDE \cite{dou} | -              | -        | -      | -      | -      | **0.113** | -       | 33.57  | -         | -        | Jetson Xavier NX   |
-| DeepVideoMVS \cite{nobuho} | -       | -        | -      | -      | -      | -        | -        | 3.6    | -         | 188M    | ZCU104             |
-| DepthFCN \cite{youki} | 256x256       | **0.66** | 76.2   | -      | -      | -        | -        | **123** | **0.3W** | 200M    | ZU3EG              |
-| MiDaSNet \cite{midas} | 480x640       | 3.47     | **85.8*** | **97.73*** | **99.51*** | 0.117*   | **0.467* | 0.71   | 1.4W    | 1.3G   | ARM Cortex A53    |
-| Proposed work         | 480x640       | 7.43     | **82.6*** | **96.81*** | **99.31*** | 0.133*   | **0.506* | 50.74  | 0.62W   | 300M   | Kria-KV260         |
+| **Architecture**            | **Input Size** | **GOPs** | **δ1** | **δ2** | **δ3** | **REL** | **RMSE** | **fps** | **Power** | **Freq** | **Platform**       |
+|-----------------------------|----------------|----------|--------|--------|--------|----------|----------|---------|-----------|----------|--------------------|
+| VGG (Eigen et al.)          | 228x304        | 23.4     | 76.9   | -      | -      | -        | -        | -       | -         | -        | CPU                |
+| ResNet50 (Xian et al.)      | 384x384        | 61.8     | 78.1   | 95     | 98.7   | 0.155    | 0.66     | -       | -         | -        | CPU                |
+| ResNet50 (Swaraja et al.)   | 256x256        | -        | -      | -      | -      | 0.168    | 0.638    | -       | -         | -        | CPU                |
+| EfficientNet-B0 (Swaraja et al.) | 256x256    | -        | -      | -      | -      | 0.156    | 0.625    | -       | -         | -        | CPU                |
+| ResNet-UpProj (Laina et al.) | 228x304       | 22.9     | 81.1   | 95.3   | 98.8   | 0.127    | 0.573    | 18.18  | -         | -        | GPU                |
+| FasterMDE (Dou et al.)      | -              | -        | -      | -      | -      | **0.113** | -       | 33.57  | -         | -        | Jetson Xavier NX   |
+| DeepVideoMVS (Nobuho et al.) | -             | -        | -      | -      | -      | -        | -        | 3.6    | -         | 188M    | ZCU104             |
+| DepthFCN (Youki et al.)     | 256x256        | **0.66** | 76.2   | -      | -      | -        | -        | **123** | **0.3W** | 200M    | ZU3EG              |
+| MiDaSNet (Midas et al.)     | 480x640        | 3.47     | **85.8*** | **97.73*** | **99.51*** | 0.117*   | **0.467* | 0.71   | 1.4W    | 1.3G   | ARM Cortex A53    |
+| Proposed work               | 480x640        | 7.43     | **82.6*** | **96.81*** | **99.31*** | 0.133*   | **0.506* | 50.74  | 0.62W   | 300M   | Kria-KV260         |
 
 *Zero-shot performance*
+
+## References
+- Eigen et al.
+- Xian et al.
+- Swaraja et al.
+- Laina et al.
+- Dou et al.
+- Nobuho et al.
+- Youki et al.
+- Midas et al.
+
 
 
 
