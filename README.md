@@ -79,27 +79,16 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 
 ### Results on NYUv2 dataset. From top to bottom: rgb image, ground truth disparity map, float model inference, quantized model inference on FPGA.
 <p align="center">
-  <img src="figures/nyu.png" alt="Example Image" width="60%" />
+  <img src="figures/nyu.png" alt="Example Image" width="99%" />
 </p>
 
 
 
 ### Results on Coco dataset. Depth maps are generated on DPU (FPGA) using quantized model weights. 
 <p align="center">
-  <img src="figures/coco.png" alt="Example Image" width="60%" />
+  <img src="figures/coco.png" alt="Example Image" width="99%" />
 </p>
 
-
-### Speed on Camera Feed	
-
-Test configuration	
-- Windows 10	
-- 11th Gen Intel Core i7-1185G7 3.00GHz	
-- 16GB RAM	
-- Camera resolution 640x480	
-- openvino_midas_v21_small_256	
-
-Speed: 22 FPS
 
 
 ### References
