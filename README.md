@@ -38,8 +38,22 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
    python visualize.py
    ```
 
+## QUALITATIVE COMPARISON  
 
-## Quantitative Comparison 
+### Results on NYUv2 dataset. From top to bottom: rgb image, ground truth disparity map, float model inference, quantized model inference on FPGA.
+<p align="center">
+  <img src="figures/nyu.png" alt="Example Image" width="99%" />
+</p>
+
+
+
+### Results on Coco dataset. Depth maps are generated on DPU (FPGA) using quantized model weights. 
+<p align="center">
+  <img src="figures/coco.png" alt="Example Image" width="99%" />
+</p>
+
+## QUANTITATIVE COMPARISON   
+
 ### Comparison with Baseline on NYUv2 Dataset
 
 | **Architecture**            | **Input Size** | **GOPs** | **δ1** | **δ2** | **δ3** | **REL** | **RMSE** | **fps** | **Power** | **Freq** | **Platform**       |
@@ -75,19 +89,7 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 
 
 
-## Depth map comparison
 
-### Results on NYUv2 dataset. From top to bottom: rgb image, ground truth disparity map, float model inference, quantized model inference on FPGA.
-<p align="center">
-  <img src="figures/nyu.png" alt="Example Image" width="99%" />
-</p>
-
-
-
-### Results on Coco dataset. Depth maps are generated on DPU (FPGA) using quantized model weights. 
-<p align="center">
-  <img src="figures/coco.png" alt="Example Image" width="99%" />
-</p>
 
 
 
