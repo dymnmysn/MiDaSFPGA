@@ -2,11 +2,11 @@
 
 The directory should be arranged as follows:
 
-xmodel_files
-├── meta.json
-├── md5sum.txt
-├── MidasNet_small_int.xmodel
-└── README.md
+xmodel_files  
+├── meta.json  
+├── md5sum.txt  
+├── MidasNet_small_int.xmodel  
+└── README.md  
 
 
 ## File Descriptions
