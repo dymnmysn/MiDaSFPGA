@@ -1,4 +1,4 @@
-#### FPGA Implementation of Monocular Depth Estimation Model: MiDaSNet
+# FPGA Implementation of Monocular Depth Estimation Model: MiDaSNet
 
 This repository contains code to FPGA implementation of depth estimation model, MiDaSNet.
 
