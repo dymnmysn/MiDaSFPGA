@@ -8,17 +8,30 @@ The figure below shows the architecture of fully convolutional MiDaSNet_small mo
 </p>
 
 
-### Setup 
+### Usage
 
-MiDaS 2.1: [midas_v21_small_256](https://github.com/isl-org/MiDaS/releases/download/v2_1/midas_v21_small_256.pt) 
-
-1) Set up dependencies: 
+1) To quantize the float model you may use the docker image which is generated from a recipe provided by Xilinx:
 
     ```shell
-    conda env create -f environment.yaml
-    conda activate midas-py310
+    docker pull yasinadiyaman/xilinx-vitis-ai-pytorch-gpu
     ```
 
+2) Then inside docker run the bash script:
+
+    ```shell
+    python evaluate_xmodel.py
+    ```
+
+3) After xmodel file generated, copy xmodel file with meta.json into Kria KV260 board (tested on Ubuntu image, not on Petalinux).
+
+4) Check the required files for run. I could not upload big files into the repo. You should download them from provided links.
+
+5) Evaluate the model on NYUv2. You may use another dataset, just copy images and ground truth depth maps under data/ directory.
+   
+    ```shell
+    bash evaluate.sh
+    ```
+    
 #### optional
 
 For the Next-ViT model, execute
