@@ -69,7 +69,7 @@ This repository contains code to FPGA implementation of depth estimation model, 
 
 *Zero-shot performance 
 
-## References
+### References on Comparison List
 
 1. Eigen, D., Fergus, R.: Predicting depth, surface normals, and semantic labels with a common multi-scale convolutional architecture. In: 2015 IEEE International Conference on Computer Vision (ICCV), Santiago, Chile, pp. 2650–2658 (2015). [DOI: 10.1109/ICCV.2015.304](https://doi.org/10.1109/ICCV.2015.304)
 
@@ -86,12 +86,7 @@ This repository contains code to FPGA implementation of depth estimation model, 
 7. Ranftl, R., Lasinger, K., Hafner, D., Schindler, K., Koltun, V.: Towards robust monocular depth estimation: Mixing datasets for zero-shot cross-dataset transfer. IEEE Transactions on Pattern Analysis and Machine Intelligence 44(3) (2022). [DOI: 10.1109/TPAMI.2021.3072546](https://doi.org/10.1109/TPAMI.2021.3072546)
 
 
-
-
-
-
-
-### References
+### Cite This Work
 
 Please cite our paper if you use this code or any of the models:
 ```
@@ -108,4 +103,4 @@ Please cite our paper if you use this code or any of the models:
 
 ### License 
 
-MIT License 
+Apache 2.0 License 
