@@ -1,6 +1,7 @@
-## Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer
+## FPGA Implementation of Monocular Depth Estimation Model: MiDaSNet
 
-This repository contains code to compute depth from a single image. It accompanies our [paper](https://arxiv.org/abs/1907.01341v3):
+This repository contains code to FPGA implementation of depth estimation model, MiDaSNet.
+
 
 >Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer  
 René Ranftl, Katrin Lasinger, David Hafner, Konrad Schindler, Vladlen Koltun
