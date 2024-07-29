@@ -2,24 +2,9 @@
 
 This repository contains code to FPGA implementation of depth estimation model, MiDaSNet.
 
+The figure below shows the architecture of fully convolutional MiDaSNet_small model.
 
->Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer  
-René Ranftl, Katrin Lasinger, David Hafner, Konrad Schindler, Vladlen Koltun
-
-
-and our [preprint](https://arxiv.org/abs/2103.13413):
-
-> Vision Transformers for Dense Prediction  
-> René Ranftl, Alexey Bochkovskiy, Vladlen Koltun
-
-For the latest release MiDaS 3.1, a [technical report](https://arxiv.org/pdf/2307.14460.pdf) and [video](https://www.youtube.com/watch?v=UjaeNNFf9sE&t=3s) are available.
-
-MiDaS was trained on up to 12 datasets (ReDWeb, DIML, Movies, MegaDepth, WSVD, TartanAir, HRWSI, ApolloScape, BlendedMVS, IRS, KITTI, NYU Depth V2) with
-multi-objective optimization. 
-The original model that was trained on 5 datasets  (`MIX 5` in the paper) can be found [here](https://github.com/isl-org/MiDaS/releases/tag/v2).
-The figure below shows an overview of the different MiDaS models; the bubble size scales with number of parameters.
-
-![](figures/Improvement_vs_FPS.png)
+![](figures/arch.png)
 
 ### Setup 
 
