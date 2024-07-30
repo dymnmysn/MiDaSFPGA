@@ -77,10 +77,3 @@ if __name__=='__main__':
     print("Average bad pixel: ", sum(loss_delta_2) / len(loss_delta_2))
     print("Average bad pixel: ", sum(loss_delta_3) / len(loss_delta_3))
     print("Average fps: ", conf.FPGA_INDEX_LENGTH * len(dl.dataset) / total_time)
-
-
-    plt.imshow(prediction.squeeze()) #Plotting last prediction
-    plt.imshow(batch['depth'].squeeze())
-    plt.imshow(batch['image'].squeeze().permute((1,2,0)))
-
-
