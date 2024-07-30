@@ -2,7 +2,7 @@
 
 This repository contains code to FPGA implementation of depth estimation model, MiDaSNet. The figure below shows the architecture of fully convolutional MiDaSNet_small model.
 <p align="center">
-  <img src="figures/midas.png" alt="Example Image" width="60%" />
+  <img src="figures/midas.png" alt="Example Image" width="75%" />
 </p>
 
 
