@@ -8,6 +8,8 @@ This repository contains code to FPGA implementation of depth estimation model, 
 
 ## Usage
 
+### Quantization
+
 1) To quantize the float model you may use the docker image which is generated from a recipe provided by Xilinx:
 
     ```shell
@@ -22,21 +24,25 @@ This repository contains code to FPGA implementation of depth estimation model, 
 
 3) After xmodel file generated, copy xmodel file with meta.json into Kria KV260 board (tested on Ubuntu image, not on Petalinux).
 
-4) Check the required files for inference. I could not upload big files into the repo. You should download them from provided links.
+### Inference on DPU
 
-5) Load DPU binaries.
+1) Check the required files for inference. I could not upload big files into the repo. You should download them from provided links.
+
+2) Load DPU binaries.
    
     ```shell
     sudo xmutil loadapp kv260-benchmark-b4096
     ```
 
-6) Evaluate the model on NYUv2. You may use another dataset, just copy images and ground truth depth maps under data/ directory.
+3) Evaluate the model on NYUv2. You may use another dataset, just copy images and ground truth depth maps under data/ directory.
    
     ```shell
     python evaluate_xmodel.py
     ```
     
-7) To compare inferenced depth maps from CPU and DPU on sample results:  
+### Visualize
+
+To compare inferenced depth maps from CPU and DPU on sample results:  
 
    ```shell
    python visualize.py
