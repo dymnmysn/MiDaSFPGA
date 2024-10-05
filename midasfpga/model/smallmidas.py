@@ -171,8 +171,10 @@ class FeatureFusionBlock_custom(nn.Module):
 
         self.resConfUnit1 = ResidualConvUnit_custom(features)
         self.resConfUnit2 = ResidualConvUnit_custom(features)
+        self.conv_transpose = nn.ConvTranspose2d(features, features, kernel_size=2, stride=2, padding=0)
 
         self.size=size
+        self.activation = nn.ReLU()
 
     def forward(self, *xs, size=None):
         """Forward pass.
@@ -188,9 +190,12 @@ class FeatureFusionBlock_custom(nn.Module):
 
         output = self.resConfUnit2(output)
 
-        output = nn.functional.interpolate(
-            output, scale_factor=2, mode="bilinear", align_corners=self.align_corners
-        )
+        #output = nn.functional.interpolate(
+        #    output, scale_factor=2, mode="bilinear", align_corners=self.align_corners
+        #)
+        #Bura benden
+        output = self.conv_transpose(output)
+        output = self.activation(output)
 
         output = self.out_conv(output)
 
@@ -263,7 +268,7 @@ class MidasNet_small(nn.Module):
             Interpolate(scale_factor=2, mode="bilinear"),
             nn.Conv2d(features//2, 32, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.Conv2d(32, 1, kernel_size=1, stride=1, padding=0),
+            nn.Conv2d(32, 23, kernel_size=1, stride=1, padding=0),
             nn.ReLU(True) if non_negative else nn.Identity(),
             nn.Identity(),
         )
