@@ -269,7 +269,7 @@ class MidasNet_small(nn.Module):
             nn.ReLU(),
             nn.ConvTranspose2d(features, features, kernel_size=2, stride=2, padding=0), 
             nn.ReLU(),
-            nn.Conv2d(features, 23, kernel_size=5, stride=1, padding=1),
+            nn.Conv2d(features, 23, kernel_size=5, stride=1, padding=2),
             #nn.ReLU(),
             #nn.Conv2d(32, 23, kernel_size=1, stride=1, padding=0),
             #nn.ReLU(True) if non_negative else nn.Identity(),
