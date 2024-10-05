@@ -265,11 +265,13 @@ class MidasNet_small(nn.Module):
 
         
         self.scratch.output_conv = nn.Sequential(
-            nn.Conv2d(features, features//2, kernel_size=3, stride=1, padding=1, groups=self.groups),
-            Interpolate(scale_factor=2, mode="bilinear"),
-            nn.Conv2d(features//2, 32, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(features, features, kernel_size=3, stride=1, padding=1, groups=self.groups),
             nn.ReLU(),
-            nn.Conv2d(32, 23, kernel_size=1, stride=1, padding=0),
+            nn.ConvTranspose2d(features, features, kernel_size=2, stride=2, padding=0), 
+            nn.ReLU(),
+            nn.Conv2d(features, 23, kernel_size=3, stride=1, padding=1),
+            #nn.ReLU(),
+            #nn.Conv2d(32, 23, kernel_size=1, stride=1, padding=0),
             #nn.ReLU(True) if non_negative else nn.Identity(),
             #nn.Identity(),
         )
