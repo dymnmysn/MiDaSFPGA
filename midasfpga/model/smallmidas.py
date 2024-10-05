@@ -256,6 +256,7 @@ class MidasNet_small(nn.Module):
             features4=features*8
 
         self.pretrained, self.scratch = _make_encoder(self.backbone, features, use_pretrained, groups=self.groups, expand=self.expand, exportable=exportable)
+        self.pretrained.layer1[0] = nn.Conv2d(2,32,3,2,1) #Bura
 
         self.scratch.refinenet4 = FeatureFusionBlock_custom(features4, deconv=False, expand=self.expand, align_corners=align_corners)
         self.scratch.refinenet3 = FeatureFusionBlock_custom(features3, deconv=False, expand=self.expand, align_corners=align_corners)
@@ -269,8 +270,8 @@ class MidasNet_small(nn.Module):
             nn.Conv2d(features//2, 32, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.Conv2d(32, 23, kernel_size=1, stride=1, padding=0),
-            nn.ReLU(True) if non_negative else nn.Identity(),
-            nn.Identity(),
+            #nn.ReLU(True) if non_negative else nn.Identity(),
+            #nn.Identity(),
         )
         
         if path:
