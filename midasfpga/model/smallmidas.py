@@ -229,8 +229,9 @@ class MidasNet_small(nn.Module):
 
         super(MidasNet_small, self).__init__()
 
-        use_pretrained = False if path else True
-                
+        #use_pretrained = False if path else True
+        use_pretrained = False #Bura benden
+            
         self.channels_last = channels_last
         self.blocks = blocks
         self.backbone = backbone
