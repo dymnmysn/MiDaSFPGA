@@ -20,7 +20,7 @@ class Midas_Config:
     FP_4096 = "0x101000016010407"
     TARGET_3136 = "DPUCZDX8G_ISA1_B3136" 
     FP_3136 = "0x101000016010406"
-    MODEL_WEIGHTS = '/content/MiDaSFPGA/weights/midas_v21_small_256.pt'
+    MODEL_WEIGHTS = '/kaggle/working/MiDaSFPGA/weights/midas_v21_small_256.pt'
     SAMPLE_IMAGE_PATH = 'data/rgb_00065.png'
     TARGET = FP_4096
 
