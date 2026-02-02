@@ -8,7 +8,7 @@ class Midas_Config:
     SEED = 1
     LOG_INTERVAL = 10
     RESUME = ''
-    DATA_ROOT = 'data'
+    DATA_ROOT = '/kaggle/input/nyuconverted/nyu_converted/test'
     QUANT_DIR = 'quantization_results/build/quantized'
     QUANT_MODE = 'float'
     QUANT_MODE_CALIB = 'calib'
