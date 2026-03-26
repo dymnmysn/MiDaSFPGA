@@ -6,8 +6,8 @@ from glob import glob
 class NyuDepthV2(data.Dataset):
     def __init__(self, datapath = 'data', transform=None, partition_index = 0, shift = 109):
         self.__transform = transform
-        img_pathes = sorted(glob(f"{datapath}/*.png"))
-        depth_pathes = sorted(glob(f"{datapath}/*.npy"))
+        img_pathes = sorted(glob(f"{datapath}/rgb/*.png"))
+        depth_pathes = sorted(glob(f"{datapath}/depth/*.npy"))
         files = [(img_pathes[i], depth_pathes[i]) for i in range(len(img_pathes))]
         self.files = files[partition_index*shift: (partition_index+1)*shift]
         self.__length = len(self.files)
